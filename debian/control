@@ -22,5 +22,5 @@ Package: libcutiewlc-dev
 Architecture: any
 Multi-Arch: foreign
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}, libcutiestore (= ${binary:Version})
+Depends: ${misc:Depends}, ${shlibs:Depends}, libcutiewlc (= ${binary:Version})
 Description: This package contains aa Qt wrapper for Cutie-spcific Wayland protocols. (Development headers)
