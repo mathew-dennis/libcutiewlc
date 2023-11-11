@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
-project(cutiewlc VERSION 0.1 LANGUAGES CXX)
+project(cutiewlc VERSION 0.1 LANGUAGES C CXX)
 
+set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core WaylandClient Quick)
@@ -9,7 +10,9 @@ qt_standard_project_setup()
 include_directories(src)
 
 set(lib_SOURCES
-    src/wayland-cutie-shell.cpp src/wayland-cutie-shell.h)
+    src/wayland-cutie-shell.cpp 
+    src/wayland-cutie-shell_p.h
+    src/wayland-cutie-shell.h)
 
 qt6_add_library(cutiewlc
     SHARED ${lib_SOURCES}
