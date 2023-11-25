@@ -28,3 +28,8 @@ void CutieShellPrivate::cutie_shell_private_blur(wl_fixed_t opacity) {
     m_blur = wl_fixed_to_double(opacity);
     emit q->blurChanged(m_blur);
 }
+
+void CutieShellPrivate::cutie_shell_private_key(uint32_t key) {
+    Q_Q(CutieShell);
+    emit q->key((CutieShell::SpecialKey) key);
+}

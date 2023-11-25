@@ -16,6 +16,7 @@ public:
 
 protected:
 	void cutie_shell_private_blur(wl_fixed_t opacity) override;
+	void cutie_shell_private_key(uint32_t key) override;
 	double m_blur = 0.0;
 
 private:
