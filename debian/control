@@ -9,6 +9,8 @@ Build-Depends: pkg-kde-tools,
                qt6-wayland-dev,
                qt6-wayland,
                pkg-config,
+               qt6-foreign-toplevel-management-dev,
+               qt6-screencopy-dev,
 Standards-Version: 4.5.1
 
 Package: libcutiewlc
