@@ -1,5 +1,8 @@
 #pragma once
 
+#include <qt6-foreign-toplevel-management.h>
+#include <qt6-screencopy.h>
+
 #include <QtWaylandClient/QtWaylandClient>
 #include <QtQml/QQmlEngine>
 
@@ -18,11 +21,13 @@ public:
 
 	CutieShell();
 	Q_INVOKABLE void execApp(const QString &path);
+	Q_INVOKABLE ScreencopyFrameV1 *getThumbnail(ForeignToplevelHandleV1 *toplevel);
 	double blur();
 
 signals:
 	void blurChanged(double opacity);
 	void key(SpecialKey key);
+	void thumbnailDamage(void *object);
 
 private:
 	Q_DECLARE_PRIVATE(CutieShell)
