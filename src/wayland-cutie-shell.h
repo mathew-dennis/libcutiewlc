@@ -8,28 +8,25 @@
 
 class CutieShellPrivate;
 
-class Q_WAYLANDCLIENT_EXPORT CutieShell 
-	: public QObject {
+class Q_WAYLANDCLIENT_EXPORT CutieShell : public QObject {
 	Q_OBJECT
 	Q_PROPERTY(double blur READ blur NOTIFY blurChanged)
-public:
-	enum SpecialKey: uint32_t {
-		PowerPress = 0,
-		PowerRelease = 1
-	};
+    public:
+	enum SpecialKey : uint32_t { PowerPress = 0, PowerRelease = 1 };
 	Q_ENUM(SpecialKey);
 
 	CutieShell();
 	Q_INVOKABLE void execApp(const QString &path);
-	Q_INVOKABLE ScreencopyFrameV1 *getThumbnail(ForeignToplevelHandleV1 *toplevel);
+	Q_INVOKABLE ScreencopyFrameV1 *
+	getThumbnail(ForeignToplevelHandleV1 *toplevel);
 	double blur();
 
-signals:
+    signals:
 	void blurChanged(double opacity);
 	void key(SpecialKey key);
 	void thumbnailDamage(void *object);
 
-private:
+    private:
 	Q_DECLARE_PRIVATE(CutieShell)
 	CutieShellPrivate *d_ptr;
 };
