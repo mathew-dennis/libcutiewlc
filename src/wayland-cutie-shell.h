@@ -12,7 +12,14 @@ class Q_WAYLANDCLIENT_EXPORT CutieShell : public QObject {
 	Q_OBJECT
 	Q_PROPERTY(double blur READ blur NOTIFY blurChanged)
     public:
-	enum SpecialKey : uint32_t { PowerPress = 0, PowerRelease = 1 };
+	enum SpecialKey : uint32_t {
+		PowerPress = 0,
+		PowerRelease = 1,
+		VolumeUpPress = 2,
+		VolumeUpRelease = 3,
+		VolumeDownPress = 4,
+		VolumeDownRelease = 5
+	};
 	Q_ENUM(SpecialKey);
 
 	CutieShell();
