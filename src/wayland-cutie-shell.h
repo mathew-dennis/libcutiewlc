@@ -23,7 +23,9 @@ class Q_WAYLANDCLIENT_EXPORT CutieShell : public QObject {
 	Q_ENUM(SpecialKey);
 
 	CutieShell();
+	// target: "current" (the screen of the caller), "internal" or "external"
 	Q_INVOKABLE void execApp(const QString &path);
+	Q_INVOKABLE void execApp(const QString &path, const QString &target);
 	Q_INVOKABLE ScreencopyFrameV1 *
 	getThumbnail(ForeignToplevelHandleV1 *toplevel);
 	double blur();

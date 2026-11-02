@@ -13,9 +13,14 @@ CutieShellPrivate::CutieShellPrivate(CutieShell *q)
 
 void CutieShell::execApp(const QString &path)
 {
+	execApp(path, QStringLiteral("current"));
+}
+
+void CutieShell::execApp(const QString &path, const QString &target)
+{
 	Q_D(CutieShell);
 	if (d->isActive()) {
-		d->exec_app(path);
+		d->exec_app(path, target);
 	} else {
 		qWarning() << "CutieShell protocol is not activated!";
 	}
